@@ -1,0 +1,119 @@
+.chat-main{
+  height: 100vh;
+  width: calc( 100vw - 300px );
+  &__group-info{
+    background-color: $info-back-color;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    &__infomation{
+      margin: 35px 0 0 40px;
+      &__group-name{
+        font-size: 20px;
+        color: $group-name-color;
+      }
+      &__member-list{
+        font-size: 12px;
+        color: $member-color ;
+        margin-top: 15px;
+      }
+    }
+    &__container{
+      display: flex;
+      flex-direction: row;
+      &__edit-group{
+        border: 1px solid $btn-color;
+        height: 40px;
+        width: 72px;
+        margin: auto 40px;
+        display: flex;
+        justify-content: center;
+        &__edit-btn{
+          text-decoration: none;
+          color: $btn-color;
+          width: 32px;
+          line-height: 40px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &__message-list{
+    background-color: $main-back-color;
+    height: calc( 100vh - 100px - 90px );
+    position: relative;
+    &__container{
+      display: block;
+      position: absolute;
+      height: calc( 100% - 70px );
+      width: calc( 100% - 80px );
+      margin: 35px 40px;
+      &__content{
+        &__sender{
+          display: flex;
+          &__name{
+            color: $name-color;
+            font-size: 16px;
+            margin-bottom: 4px;
+          }
+          &__date{
+            color: $date-color;
+            font-size: 12px;
+            margin-left: 5px;
+          }
+        }
+        &__message{
+          color: $message-color;
+          font-size: 14px;
+          margin-bottom: 46px;
+        }
+      }
+    }
+  }
+  &__message-form{
+    background-color: $input-back-color;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    .form-area{
+      height: 50px;
+      width: Calc( 100% - 80px);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      .input-area{
+        position: relative;
+        background-color: $btn-color;
+        height: 100%;
+        width: calc( 100% - 110px );
+        .input-msg{
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          padding-left: 10px;
+        }
+        .input-img-mask{
+          position: absolute;
+          font-size: 20px;
+          right: 0;
+          line-height: 50px;
+          margin-right: 10px;
+          .input-img{
+            display: none;
+          }
+        }
+      }
+      .submit-btn-mask{
+        background-color: $btn-color;
+        color: $btn-txt-color;
+        height: 100%;
+        width: 95px;
+        line-height: 50px;
+        text-align: center;
+        .send-btn{
+          display: none;
+        }
+      } 
+    }
+  }
+}
