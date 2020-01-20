@@ -29,8 +29,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
-|address|string|null: false, unique: true|
-|pasword|string|null: false|
+|email|string|null: false|
+|encrypted_password|string|null: false|
 
 ### Association
 - has_many :groups_users
