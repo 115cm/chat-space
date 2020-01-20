@@ -4,23 +4,15 @@
       .side-var__user-name__name-icon__name
         = current_user.name
       .side-var__user-name__name-icon__icon
-      =link_to "#" do
+      =link_to new_group_path do
         = icon('fas', 'edit', class: "side-var__user-name__name-icon__icon__edit")
       =link_to edit_user_path(current_user) do
         = icon('fas', 'cog', class: "side-var__user-name__name-icon__icon__setting")
   .side-var__group-list
-    .side-var__group-list__content
-      .side-var__group-list__content__group-name
-        グループ_01
-      .side-var__group-list__content__group-message
-        新しいメッセージはありません
-    .side-var__group-list__content
-      .side-var__group-list__content__group-name
-        グループ_01
-      .side-var__group-list__content__group-message
-        新しいメッセージはありません
-    .side-var__group-list__content
-      .side-var__group-list__content__group-name
-        グループ_01
-      .side-var__group-list__content__group-message
-        新しいメッセージはありません
+    - current_user.group.each do |group|
+      .side-var__group-list__content
+        = link_to '#' do
+          .side-var__group-list__content__group-name
+            = group.name
+          .side-var__group-list__content__group-message
+            メッセージはまだありません。

@@ -50,8 +50,8 @@ Things you may want to cover:
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references :user|null: false, foreign_key: true|
-|group_id|references :group|null: false, foreign_key: true|
+|user_id|references :user|foreign_key: true|
+|group_id|references :group|foreign_key: true|
 
 ### Association
 - belongs_to :user
