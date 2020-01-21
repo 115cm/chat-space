@@ -19,6 +19,7 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
+    # @group.users << current_user  # グループ編集時に現在のユーザは必ず含めるため追加
   end
 
   def update

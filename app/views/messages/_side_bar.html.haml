@@ -11,7 +11,7 @@
   .side-var__group-list
     - current_user.group.each do |group|
       .side-var__group-list__content
-        = link_to '#' do
+        = link_to "#", class: "link-decoration" do
           .side-var__group-list__content__group-name
             = group.name
           .side-var__group-list__content__group-message
