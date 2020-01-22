@@ -2,46 +2,29 @@
   .chat-main__group-info
     .chat-main__group-info__infomation
       .chat-main__group-info__infomation__group-name
-        test
-      .chat-main__group-info__infomation__member-list
-        Member : masa
+        = @group.name
+      .chat-main__group-info__infomation__member-lists
+        Member : 
+        - @group.users.each do |user|
+          =user.name
+        .chat-main__group-info__infomation__member-lists__member  
     .chat-main__group-info__container
       .chat-main__group-info__container__edit-group
-        = link_to "#", class: "chat-main__group-info__container__edit-group__edit-btn" do
+        = link_to edit_group_path(@group), class: "chat-main__group-info__container__edit-group__edit-btn" do
           Edit
   .chat-main__message-list
     .chat-main__message-list__container
-      .chat-main__message-list__container__content
-        .chat-main__message-list__container__content__sender
-          .chat-main__message-list__container__content__sender__name
-            masa
-          .chat-main__message-list__container__content__sender__date
-            2019/11/20(Wed) 17:43:01
-        .chat-main__message-list__container__content__message
-          おはよう
-      .chat-main__message-list__container__content
-        .chat-main__message-list__container__content__sender
-          .chat-main__message-list__container__content__sender__name
-            masa
-          .chat-main__message-list__container__content__sender__date
-            2019/11/20(Wed) 17:43:01
-        .chat-main__message-list__container__content__message
-          おはよう<br>おはよう<br>おはよう<br>おはよう<br>おはよう<br>
-      .chat-main__message-list__container__content
-        .chat-main__message-list__container__content__sender
-          .chat-main__message-list__container__content__sender__name
-            masa
-          .chat-main__message-list__container__content__sender__date
-            2019/11/20(Wed) 17:43:01
-        .chat-main__message-list__container__content__message
-          今日から雨
+
+      .messages
+        = render @messages          
+
   .chat-main__message-form
-    %form{class: "form-area", action: "#", method: "post"}
-      %div{class: "input-area"}
-        %input{class: "input-msg", type: "text", placeholder: "type a message"}
-        %label{class: "input-img-mask"}
-          = icon('fas', 'image')
-          %input{class: "input-img", type: "file"}
-      %label{class: "submit-btn-mask"}
-        Send
-        %button{class: "send-btn", type: "submit", value:"Send"}
+    .form-area
+      = form_for [@group, @message] do |f|  # messageがgroupにネストされているため
+        = f.text_field :content, class: 'input-area', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'input-img-mask' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'input-img'
+        .submit-btn-mask
+          = f.submit 'Send', class: 'send-btn'
