@@ -11,8 +11,9 @@
   .side-var__group-list
     - current_user.group.each do |group|
       .side-var__group-list__content
-        = link_to "#", class: "link-decoration" do
+        = link_to group_messages_path(group), class: "link-decoration" do
           .side-var__group-list__content__group-name
             = group.name
           .side-var__group-list__content__group-message
-            メッセージはまだありません。
+            = group.show_last_message
+            -# 最終メッセージをgroupモデルで指定。
