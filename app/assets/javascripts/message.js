@@ -58,12 +58,13 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.chat-main__message-list__container').animate({ scrollTop: $('.chat-main__message-list__container')[0].scrollHeight});
-      $('#message_content').val("");
-      $('#message-send-btn').prop('disabled', false);
+      $('#new_message')[0].reset();
     })
     .fail(function(){
       alert("送信エラー");
-      $('#message-send-btn').prop('disabled', false);
     })
+    .always(function () {
+      $('#message-send-btn').prop('disabled', false);
+    });
   })
 });
