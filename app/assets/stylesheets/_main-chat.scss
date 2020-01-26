@@ -41,13 +41,14 @@
   &__message-list{
     background-color: $main-back-color;
     height: calc( 100vh - 100px - 90px );
+    padding-top: 40px;
     position: relative;
     &__container{
       display: block;
-      position: absolute;
+      overflow: scroll;
       height: calc( 100% - 70px );
       width: calc( 100% - 80px );
-      margin: 35px 40px;
+      margin: 0 40px 0;
       .message{
         .upper-message{
           display: flex;
@@ -111,14 +112,10 @@
           width: 95px;
           margin-left: 15px;
           text-align: center;
-          .send-btn{
-            line-height: 50px;
-            background-color: $btn-color;
-            color: white;
-            border-style: none;
-          }
+          color: white;
         }
       }
     }
   }
 }
+
