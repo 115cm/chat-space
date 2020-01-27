@@ -46,7 +46,7 @@
     &__container{
       display: block;
       overflow: scroll;
-      height: calc( 100% - 70px );
+      height: 100%;
       width: calc( 100% - 80px );
       margin: 0 40px 0;
       .message{
