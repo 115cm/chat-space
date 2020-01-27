@@ -26,5 +26,4 @@
           = f.label :image, class: 'input-img-mask' do
             = icon('fas', 'image', class: 'icon')
             = f.file_field :image, class: 'input-img'
-        .submit-btn-mask
-          = f.submit 'Send', class: 'send-btn'
+        = f.submit 'Send', class: 'send-btn submit-btn-mask', id: 'message-send-btn'
