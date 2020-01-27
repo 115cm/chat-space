@@ -1,4 +1,3 @@
-# 更新
 class UsersController < ApplicationController
 
   def edit

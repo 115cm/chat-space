@@ -1,4 +1,3 @@
-// 更新
 $(function(){
   
   var reloadMessages = function() {
