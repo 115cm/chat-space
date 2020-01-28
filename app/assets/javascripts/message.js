@@ -22,11 +22,10 @@ $(function(){
       //メッセージが入ったHTMLに、入れ物ごと追加
       $('.messages').append(insertHTML);
       $('.chat-main__message-list__container').animate({ scrollTop: $('.chat-main__message-list__container')[0].scrollHeight});
-      $('#new_message')[0].reset();
-      $('#message-send-btn').prop('disabled', false);
+      //自動更新にはformを使用しないのでformリセットは不要
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   };
 
