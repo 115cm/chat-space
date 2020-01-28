@@ -1,3 +1,4 @@
+# 更新ファイル
 class MessagesController < ApplicationController
 
   before_action :set_group
