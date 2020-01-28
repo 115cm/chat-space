@@ -1,3 +1,4 @@
+# 更新ファイル
 class Api::MessagesController < ApplicationController
   def index
     
