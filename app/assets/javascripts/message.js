@@ -1,4 +1,3 @@
-//更新ファイル
 $(function(){
   
   var reloadMessages = function() {
