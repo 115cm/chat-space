@@ -1,3 +1,4 @@
+#更新ファイル
 json.array! @messages do |message|    # 新規の投稿は複数ある可能性があるため「array!」を使用。
   json.content message.content
   json.image message.image.url
