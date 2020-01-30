@@ -3,7 +3,6 @@ $(function(){
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.message:last').data("message-id");
-    console.log(last_message_id)
     $.ajax({
       //ルーティングで設定した通りのURLを指定
       url: "api/messages",
@@ -22,7 +21,7 @@ $(function(){
       });
       //メッセージが入ったHTMLに、入れ物ごと追加
       $('.messages').append(insertHTML);
-      $('.chat-main__message-list__container').animate({ scrollTop: $('.chat-main__message-list__container')[0].scrollHeight});
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       //自動更新にはformを使用しないのでformリセットは不要
     })
     .fail(function() {
