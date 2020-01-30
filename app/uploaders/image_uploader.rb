@@ -4,8 +4,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  # storage :file
+  storage :fog  # imageの保存場所を「storage :file」から変えるための記述
 
   process resize_to_fit: [800, 800] # 縦横比を維持したままで縦横を800px以内にリサイズ
 
