@@ -12,6 +12,6 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'  # アジアパシフィック（東京）を示す
   }
 
-  config.fog_directory  = 'ここにバケット名を入れます'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/ここにバケット名を入れます'
+  config.fog_directory  = 'chatspace0528'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chatspace0528'
 end
