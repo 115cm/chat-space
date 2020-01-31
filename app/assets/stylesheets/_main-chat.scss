@@ -47,7 +47,8 @@
       display: block;
       overflow: scroll;
       height: 100%;
-      width: calc( 100% - 80px );
+      // width: calc( 100% - 80px );
+      width: 100%;
       margin: 0 40px 0;
       .message{
         .upper-message{
